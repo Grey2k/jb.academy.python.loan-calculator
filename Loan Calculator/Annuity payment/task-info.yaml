@@ -116,23 +116,21 @@ files:
     if __name__ == '__main__':
         LoanCalcTest('creditcalc.creditcalc').run_tests()
   learner_created: false
+- name: creditcalc/calculate_periods.py
+  visible: true
+  learner_created: true
+- name: creditcalc/calculate_principal.py
+  visible: true
+  learner_created: true
+- name: creditcalc/calculate_annuity.py
+  visible: true
+  learner_created: true
+- name: creditcalc/utils.py
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/90/stages/502/implement#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Exception in test #1
-
-    Traceback (most recent call last):
-      File "creditcalc.py", line 50, in <module>
-        principal = int(input().strip())
-    ValueError: invalid literal for int() with base 10: 'a'
-
-    Please find below the output of your program during this failed test.
-    Note that the '>' character indicates the beginning of the input line.
-
-    ---
-
-    Enter the loan principal:
-    > a
-  time: Sat, 02 Jan 2021 19:30:42 UTC
+  message: Congratulations!
+  time: Mon, 04 Jan 2021 15:33:58 UTC
 record: -1
