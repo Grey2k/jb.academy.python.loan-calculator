@@ -1,6 +1,6 @@
 from math import ceil
 
-from utils import nominal_interest_rate, annuity_payment
+from utils import nominal_interest_rate, annuity_payment, overpayment
 
 
 def calculate_annuity_payment(principal: float, periods: float, interest: float) -> float:
@@ -8,16 +8,9 @@ def calculate_annuity_payment(principal: float, periods: float, interest: float)
     return annuity_payment(principal, periods, interest_rate)
 
 
-def run():
-    print('Enter the loan principal:')
-    principal = float(input().strip())
+def run(principal: float, periods: float, interest: float) -> None:
+    payment = ceil(calculate_annuity_payment(principal, periods, interest))
+    overpay = overpayment(principal, periods * payment)
 
-    print('Enter the number of periods:')
-    periods = float(input().strip())
-
-    print('Enter the loan interest:')
-    interest = float(input().strip())
-
-    payment = calculate_annuity_payment(principal, periods, interest)
-
-    print('Your monthly payment = {}!'.format(ceil(payment)))
+    print('Your monthly payment = {}!'.format(payment))
+    print('Overpayment {}'.format(ceil(overpay)))

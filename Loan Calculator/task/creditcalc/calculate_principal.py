@@ -1,6 +1,6 @@
 import math
 
-from utils import nominal_interest_rate
+from utils import nominal_interest_rate, overpayment
 
 
 def calculate_principal(payment: float, periods: float, interest: float) -> float:
@@ -11,16 +11,9 @@ def calculate_principal(payment: float, periods: float, interest: float) -> floa
     return principal
 
 
-def run():
-    print('Enter the annuity payment:')
-    payment = float(input().strip())
-
-    print('Enter the number of periods:')
-    periods = float(input().strip())
-
-    print('Enter the loan interest:')
-    interest = float(input().strip())
-
+def run(payment: float, periods: float, interest: float) -> None:
     principal = calculate_principal(payment, periods, interest)
+    overpay = overpayment(principal, periods * payment)
 
-    print('Your loan principal = {}!'.format(principal))
+    print('Your loan principal = {}!'.format(int(principal)))
+    print('Overpayment {}'.format(math.ceil(overpay)))

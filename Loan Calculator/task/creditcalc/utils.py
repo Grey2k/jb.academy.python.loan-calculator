@@ -11,3 +11,7 @@ def annuity_payment(principal: float, payments: float, n_interest_rate: float) -
 
     annuity = principal * (i * math.pow(1 + i, n)) / (math.pow(1 + i, n) - 1)
     return annuity
+
+
+def overpayment(principal: float, total: float) -> float:
+    return total - principal
